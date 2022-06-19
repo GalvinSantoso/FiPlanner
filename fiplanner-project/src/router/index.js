@@ -5,6 +5,7 @@ import DiscoverView from '../views/DiscoverView.vue';
 import BlogView from '../views/BlogView.vue';
 import SigninView from '../views/SigninView.vue';
 import SignupView from '../views/SignupView';
+import Planner from '../views/Planner.vue';
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: SignupView,
+  },
+  {
+    path: '/planner',
+    name: 'planner',
+    component: Planner,
   },
 ];
 
