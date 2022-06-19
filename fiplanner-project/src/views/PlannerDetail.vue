@@ -10,12 +10,14 @@
       <!-- header -->
       <div class="flex justify-between items-center">
         <h5 class="text-white text-2xl font-semibold">
-          <span class="text-primary">Target: {{ targetPlanning }}</span>
+          <span class="text-primary" ref="hasil">Target: 200000</span>
         </h5>
         <select
           name=""
           id=""
           class="bg-primary text-white font-semibold text-lg p-2 hover:text-primary hover:bg-white hover:border-primary transition border duration-500 border-white rounded-md"
+          @change="bulanTer()"
+          ref="selectBulan"
         >
           <option v-for="bulan in bulanOption" :key="bulan" :value="bulan">
             {{ bulan }}
@@ -26,8 +28,9 @@
 
       <div class="p-8">
         <h1 class="font-semibold text-2xl pb-4">
-          Transaksi yang kamu lakukan bulan Mei
+          Transaksi yang kamu lakukan bulan {{ bulanTerpilih }}
         </h1>
+        <div></div>
         <div class="shadow-lg p-4 flex justify-between items-center rounded-lg">
           <div>
             <p class="py-2 font-medium">Makan</p>
@@ -59,21 +62,22 @@
 export default {
   data() {
     return {
-      targetPlanning: 200000,
+      targetPlanning: "0",
       bulan: [
         "January",
         "February",
         "March",
         "April",
         "May",
-        "Juny",
+        "June",
         "July",
-        "Agustus",
+        "August",
         "September",
-        "Oktober",
+        "October",
         "November",
-        "Desember",
+        "December",
       ],
+      bulanTerpilih: "January",
     };
   },
   computed: {
@@ -81,6 +85,11 @@ export default {
       return this.bulan.map((e) => {
         return e;
       });
+    },
+  },
+  methods: {
+    bulanTer() {
+      this.bulanTerpilih = this.$refs.selectBulan.value;
     },
   },
 };
