@@ -1,14 +1,16 @@
 <template>
-  <Nav />
-  <router-view></router-view>
+  <div>
+    <Nav />
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Nav from '@/components/Nav.vue';
+import Nav from "@/components/Nav.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Nav,
   },
@@ -17,7 +19,7 @@ export default {
 
 <style lang="postcss">
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 .garis-hijau {
