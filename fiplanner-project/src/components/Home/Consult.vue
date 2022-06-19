@@ -83,7 +83,7 @@
     <div class="pt-2 pb-4 flex justify-center">
       <button
         class="bg-primary p-4 font-semibold text-lg text-white rounded-md"
-        @click="$route.push('')"
+        @click="$router.push('discover')"
       >
         Explore lebih banyak
       </button>
