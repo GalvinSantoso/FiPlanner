@@ -12,11 +12,12 @@
         </h1>
         <div class="flex flex-col w-1/2 justify-around items-center mx-auto">
           <input
+            v-model="harga"
             type="text"
             class="focus:outline-none w-full border-primary border-2 rounded-md p-2 bg-slate-300 my-4 text-primary text-lg font-semibold"
           />
           <button
-            @click="$router.push('/plannerDetail')"
+            @click="passingData()"
             class="text-white bg-primary p-4 w-full text-lg font-semibold rounded-md"
           >
             Go to your plan
@@ -34,7 +35,14 @@ export default {
   data() {
     return {
       plannerTitle: "Cek Pengeluaranmu dengan aplikasi kami!",
+      harga: "",
     };
+  },
+  methods: {
+    passingData() {
+      this.$router.push("/plannerDetail");
+      this.eventBus.emit("value", this.harga);
+    },
   },
 };
 </script>
